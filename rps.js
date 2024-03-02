@@ -1,6 +1,6 @@
-console.log("Welcome! Please set playerChoice to rock, paper or scissors. When you're ready, execute the playRound function.")
+console.log("Welcome! Please choose rock, paper or scissors in the prompt. When you're ready to play, execute the playRound function.")
 
-prompt("Rock, paper, or scissors?").toLowerCase;
+let playerChoice = prompt("Rock, paper, or scissors?").toLowerCase;
 
 function getComputerChoice() {
     const choiceOptions = ["Rock", "Paper", "Scissors"];
@@ -9,7 +9,8 @@ function getComputerChoice() {
 
 }
 
-function playRound(computerChoice, playerChoice) {
-    if (playerChoice === "rock" && computerChoice === "scissors")
-        
-}
+// function playRound(computerChoice, playerChoice) {
+//     switch 
+//     // (playerChoice === "rock" && computerChoice === "scissors")
+
+// }
