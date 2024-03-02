@@ -1,6 +1,6 @@
 console.log("Welcome! Please set playerChoice to rock, paper or scissors. When you're ready to play, execute playRound(computerChoice, playerChoice) function.")
 
-let playerChoice = prompt("Rock, paper, or scissors?")
+let playerChoice
 let computerChoice
 
 function getComputerChoice() {
@@ -10,7 +10,7 @@ function getComputerChoice() {
 }
 
  function playRound(computerChoice, playerChoice) {
-
+    playerChoice = prompt("Rock, paper, or scissors?")
     computerChoice = getComputerChoice()
 
     if ((playerChoice === 'rock' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'paper') || (playerChoice === 'paper' && computerChoice === 'rock')) {
