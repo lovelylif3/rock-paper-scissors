@@ -1,4 +1,4 @@
-console.log("Welcome! Please set playerChoice to rock, paper or scissors. When you're ready to play, execute playRound(computerChoice, playerChoice) function.")
+console.log("Welcome to Rock, Paper, Scissors! When you're ready to play, execute playRound(computerChoice, playerChoice) function. Your input is not case-sensitive, but please don't misspell it :)")
 
 let playerChoice
 let computerChoice
@@ -9,8 +9,11 @@ function getComputerChoice() {
     return result.toLowerCase()
 }
 
+function getPlayerChoice() {
+    return prompt("Rock, Paper, or Scissors?")
+}
  function playRound(computerChoice, playerChoice) {
-    playerChoice = prompt("Rock, paper, or scissors?")
+    playerChoice = getPlayerChoice()
     computerChoice = getComputerChoice()
 
     if ((playerChoice === 'rock' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'paper') || (playerChoice === 'paper' && computerChoice === 'rock')) {
@@ -20,7 +23,7 @@ function getComputerChoice() {
     } else if ((playerChoice === 'paper' && computerChoice === 'paper') ||(playerChoice === 'rock' && computerChoice === 'rock') || (playerChoice === 'scissors' && computerChoice === 'scissors')) {
         return "Tie! You both picked " + computerChoice + ".";
     } else {
-        return "Something went wrong."
+        return "Something went wrong... Check spelling of your input."
     }
 
  }
