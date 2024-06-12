@@ -38,19 +38,19 @@ function getPlayerChoice() {
 
  }
 
- function playGame() {
-    playerPoints = 0
-    computerPoints = 0
-    playRound(computerChoice, playerChoice);
-    playRound(computerChoice, playerChoice);
-    playRound(computerChoice, playerChoice); 
-    playRound(computerChoice, playerChoice);
-    playRound(computerChoice, playerChoice);
+//  function playGame() {
+//     playerPoints = 0
+//     computerPoints = 0
+//     playRound(computerChoice, playerChoice);
+//     playRound(computerChoice, playerChoice);
+//     playRound(computerChoice, playerChoice); 
+//     playRound(computerChoice, playerChoice);
+//     playRound(computerChoice, playerChoice);
 
-   if (playerPoints > computerPoints) {
-        console.log(`You won by ${playerPoints - computerPoints} point(s). You had ${playerPoints} point(s) and the computer had ${computerPoints}. Great job!`)
-    } else if (playerPoints < computerPoints) {
-        console.log(`You lost by ${computerPoints - playerPoints} point(s). You had ${playerPoints} point(s) and the computer had ${computerPoints}. Better luck next time!`)
-    } else if (playerPoints === computerPoints)
-        console.log(`The game was a tie. You had ${playerPoints} point(s) and the computer had ${computerPoints}.`)
- }
+//    if (playerPoints > computerPoints) {
+//         console.log(`You won by ${playerPoints - computerPoints} point(s). You had ${playerPoints} point(s) and the computer had ${computerPoints}. Great job!`)
+//     } else if (playerPoints < computerPoints) {
+//         console.log(`You lost by ${computerPoints - playerPoints} point(s). You had ${playerPoints} point(s) and the computer had ${computerPoints}. Better luck next time!`)
+//     } else if (playerPoints === computerPoints)
+//         console.log(`The game was a tie. You had ${playerPoints} point(s) and the computer had ${computerPoints}.`)
+//  }
