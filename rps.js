@@ -1,7 +1,19 @@
-const rockBtn = document.querySelector("#rockBtn")
-const paperBtn = document.querySelector("#paperBtn")
-const scissBtn = document.querySelector("#scissBtn")
+const rockButton = document.querySelector('#rock');
+const paperButton = document.querySelector('#paper');
+const scissorsButton = document.querySelector('#scissors');
+const resultText = document.querySelector('#resultText');
 
+rockButton.addEventListener("click", () => {
+    playRound(computerChoice, "rock");
+});
+
+paperButton.addEventListener("click", () => {
+    playRound(computerChoice, "paper");
+});
+
+scissorsButton.addEventListener("click", () => {
+    playRound(computerChoice, "scissors");
+});
 
 
 console.log("Welcome to Rock, Paper, Scissors! When you're ready to play, execute the playGame() function. You will play 5 rounds against the computer. Your input is not case-sensitive, but please don't misspell it :)")
@@ -19,25 +31,25 @@ function getComputerChoice() {
     return result.toLowerCase()
 }
 
-function getPlayerChoice() {
-    return prompt("Rock, Paper, or Scissors?")
-}
+// function getPlayerChoice() {
+//     return prompt("Rock, Paper, or Scissors?")
+// }
 
  function playRound(computerChoice, playerChoice) {
-    playerChoice = getPlayerChoice()
+    // playerChoice = getPlayerChoice()
     computerChoice = getComputerChoice()
 
     if ((playerChoice === 'rock' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'paper') || (playerChoice === 'paper' && computerChoice === 'rock')) {
         playerPoints ++
-        console.log(`You won the round. The computer picked ${computerChoice}.`)
+        resultText.textContent = `You won the round. The computer picked ${computerChoice}. The running score is: You ${playerPoints} Computer ${computerPoints}`
         // return "You win! " + playerChoice + " beats " + computerChoice + "!";
     } else if ((playerChoice === 'rock' && computerChoice === 'paper') || (playerChoice === 'paper' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'rock')) {
         computerPoints ++
-        console.log(`You lost the round. The computer picked ${computerChoice}...`)
+        resultText.textContent = `You lost the round. The computer picked ${computerChoice}... The running score is: You ${playerPoints} Computer ${computerPoints}`
         // return "You lose! " + computerChoice + " beats " + playerChoice + "!";
     } else if ((playerChoice === 'paper' && computerChoice === 'paper') ||(playerChoice === 'rock' && computerChoice === 'rock') || (playerChoice === 'scissors' && computerChoice === 'scissors')) {
         // return //"Tie! You both picked " + computerChoice + ".";
-        console.log(`This round was a tie. You both picked ${computerChoice}!`)
+        resultText.textContent = `This round was a tie. You both picked ${computerChoice}! The running score is: You ${playerPoints} Computer ${computerPoints}`
     } else {
         // return "Something went wrong... Check spelling of your input."
     }
