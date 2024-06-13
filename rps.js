@@ -1,3 +1,9 @@
+const rockBtn = document.querySelector("#rockBtn")
+const paperBtn = document.querySelector("#paperBtn")
+const scissBtn = document.querySelector("#scissBtn")
+
+
+
 console.log("Welcome to Rock, Paper, Scissors! When you're ready to play, execute the playGame() function. You will play 5 rounds against the computer. Your input is not case-sensitive, but please don't misspell it :)")
 
 let playerChoice
