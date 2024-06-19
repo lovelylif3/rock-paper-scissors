@@ -39,21 +39,49 @@ function getComputerChoice() {
     // playerChoice = getPlayerChoice()
     computerChoice = getComputerChoice()
 
-    if ((playerChoice === 'rock' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'paper') || (playerChoice === 'paper' && computerChoice === 'rock')) {
-        playerPoints ++
-        resultText.textContent = `You won the round. The computer picked ${computerChoice}. The running score is: You ${playerPoints} Computer ${computerPoints}`
-        // return "You win! " + playerChoice + " beats " + computerChoice + "!";
-    } else if ((playerChoice === 'rock' && computerChoice === 'paper') || (playerChoice === 'paper' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'rock')) {
-        computerPoints ++
-        resultText.textContent = `You lost the round. The computer picked ${computerChoice}... The running score is: You ${playerPoints} Computer ${computerPoints}`
-        // return "You lose! " + computerChoice + " beats " + playerChoice + "!";
-    } else if ((playerChoice === 'paper' && computerChoice === 'paper') ||(playerChoice === 'rock' && computerChoice === 'rock') || (playerChoice === 'scissors' && computerChoice === 'scissors')) {
-        // return //"Tie! You both picked " + computerChoice + ".";
-        resultText.textContent = `This round was a tie. You both picked ${computerChoice}! The running score is: You ${playerPoints} Computer ${computerPoints}`
-    } else {
-        // return "Something went wrong... Check spelling of your input."
-    }
+    if ((playerPoints < 5) && (computerPoints < 5)) {
 
+        if ((playerChoice === 'rock' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'paper') || (playerChoice === 'paper' && computerChoice === 'rock')) {
+            playerPoints ++
+            resultText.textContent = `You won the round. The computer picked ${computerChoice}. The running score is: You ${playerPoints} Computer ${computerPoints}`
+            if ((playerPoints < computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+                resultText.textContent = `You lose the game! Computer: ${computerPoints} You: ${playerPoints}`
+            } else if ((playerPoints > computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+                resultText.textContent = `You win the game! Computer: ${computerPoints} You: ${playerPoints}`
+            }
+            // return "You win! " + playerChoice + " beats " + computerChoice + "!";
+        } else if ((playerChoice === 'rock' && computerChoice === 'paper') || (playerChoice === 'paper' && computerChoice === 'scissors') || (playerChoice === 'scissors' && computerChoice === 'rock')) {
+            computerPoints ++
+            resultText.textContent = `You lost the round. The computer picked ${computerChoice}... The running score is: You ${playerPoints} Computer ${computerPoints}`
+            if ((playerPoints < computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+                resultText.textContent = `You lose the game! Computer: ${computerPoints} You: ${playerPoints}`
+            } else if ((playerPoints > computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+                resultText.textContent = `You win the game! Computer: ${computerPoints} You: ${playerPoints}`
+            }
+            // return "You lose! " + computerChoice + " beats " + playerChoice + "!";
+        } else if ((playerChoice === 'paper' && computerChoice === 'paper') ||(playerChoice === 'rock' && computerChoice === 'rock') || (playerChoice === 'scissors' && computerChoice === 'scissors')) {
+            // return //"Tie! You both picked " + computerChoice + ".";
+            resultText.textContent = `This round was a tie. You both picked ${computerChoice}! The running score is: You ${playerPoints} Computer ${computerPoints}`
+            if ((playerPoints < computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+                resultText.textContent = `You lose the game! Computer: ${computerPoints} You: ${playerPoints}`
+            } else if ((playerPoints > computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+                resultText.textContent = `You win the game! Computer: ${computerPoints} You: ${playerPoints}`
+            }
+        } else {
+            // return "Something went wrong... Check spelling of your input."
+            if ((playerPoints < computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+                resultText.textContent = `You lose the game! Computer: ${computerPoints} You: ${playerPoints}`
+            } else if ((playerPoints > computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+                resultText.textContent = `You win the game! Computer: ${computerPoints} You: ${playerPoints}`
+            }
+        }
+    } else {
+        if ((playerPoints < computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+            resultText.textContent = `You lose the game! Computer: ${computerPoints} You: ${playerPoints}`
+        } else if ((playerPoints > computerPoints) && ((playerPoints === 5) || (computerPoints === 5))) {
+            resultText.textContent = `You win the game! Computer: ${computerPoints} You: ${playerPoints}`
+        }
+    }
  }
 
 //  function playGame() {
