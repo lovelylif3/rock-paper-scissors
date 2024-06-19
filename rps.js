@@ -3,7 +3,7 @@ const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
 const resultText = document.querySelector('#resultText');
 
-resultText.textContent = "Let's play rock, paper, scissors! Make a choice to play a round against the computer."
+resultText.textContent = "Let's play Rock, Paper, Scissors! Make a choice to play a round against the computer. First one to 5 points wins the game."
 rockButton.addEventListener("click", () => {
     playRound(computerChoice, "rock");
 });
